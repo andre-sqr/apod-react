@@ -2,17 +2,19 @@ import React, { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import S from "./Section.module.css";
+import Image from "../Image/Image";
+import Video from "../Video/Video";
 
 const Section = () => {
-  const [data, setData] = useState("");
+  const [data, setData] = useState("2022-08-29");
+  const [infos, setInfos] = useState({})
 
   const url = `https://api.nasa.gov/planetary/apod?api_key=cfc6pA7kyAgQdATFivgeENC3WLslXp04aHxCbCBC&date=${data}`;
 
   const handleReq = async () => {
     let response = await fetch(url);
     const json = await response.json();
-    // setData([...data,...json.copyright]);
-    console.log(json.copyright);
+    setInfos(json)
   };
 
   const handleChange = (e, data) => {
@@ -40,6 +42,13 @@ const Section = () => {
           }}
         />
         <Button style={S.button} onClick={handleClick} text={"Enviar"} />
+      </div>
+
+      <div>
+        {infos.media_type == 'image' ?
+        <Image src={infos.url}/> 
+        : 
+        <Video src={infos.url}/>}
       </div>
     </section>
   );
