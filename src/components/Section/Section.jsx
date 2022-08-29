@@ -1,13 +1,24 @@
 import React from 'react'
+import Button from '../Button/Button'
 import Input from '../Input/Input'
 import S from './Section.module.css'
 
 const Section = () => {
 
-    const url = 'https://api.nasa.gov/planetary/apod?api_key=cfc6pA7kyAgQdATFivgeENC3WLslXp04aHxCbCBC&date=${pegarData}'
+    const [data, setData] = useState()
+
+    const handleChange = (e, data) => {
+        setData(e.target.value)
+    }
+
+    const handleClick = ()=> {
+
+    }
+
+    const url = `https://api.nasa.gov/planetary/apod?api_key=cfc6pA7kyAgQdATFivgeENC3WLslXp04aHxCbCBC&date=${data}`
 
 
-    const requisicao = async ()=> {
+    const handleReq = async ()=> {
         let response = await fetch(url)
         .then(response => {
             // lida com a resposta
@@ -20,7 +31,8 @@ const Section = () => {
   return (
     <section>
         <div>
-        <Input type='date' style={S.input}/>
+        <Input type='date' style={S.input} onChange={(e)=>{handleChange(e, 'data')}}/>
+        <Button style={S.button} onClick={handleClick} text={'Enviar'}/> 
         </div>
     </section>
   )
