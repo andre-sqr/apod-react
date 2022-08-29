@@ -1,4 +1,6 @@
 import React from 'react'
+import Input from '../Input/Input'
+import S from './Section.module.css'
 
 const Section = () => {
 
@@ -18,7 +20,7 @@ const Section = () => {
   return (
     <section>
         <div>
-
+        <Input type='date' style={S.input}/>
         </div>
     </section>
   )
