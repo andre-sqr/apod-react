@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+  }
+  
+  body {
+    background-image: linear-gradient(to left, #411e5a 0%, #224d52 100%);
+    font-family: 'Trispace', sans-serif;
+  }

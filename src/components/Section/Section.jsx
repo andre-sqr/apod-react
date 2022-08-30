@@ -32,8 +32,8 @@ const Section = () => {
   }, [data]);
 
   return (
-    <section>
-      <div>
+    <section className={S.container}>
+      <div className={S.divReq}>
         <Input
           type="date"
           style={S.input}

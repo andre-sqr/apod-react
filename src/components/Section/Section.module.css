@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+.input {
+  top: 441px;
+  left: 870px;
+  width: 240px;
+  height: 30px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 5px solid #000000;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Trispace', sans-serif;
+}
+
+.divReq {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+  gap: 50px;
+  
+}
+
+.button {
+  width: 160px;
+  height: 40px;
+  color: #ffffff;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #C53F3F 0%, #D2D2D2 100%);
+  background-clip: padding-box;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 0;
+  font-family: 'Trispace', sans-serif;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
