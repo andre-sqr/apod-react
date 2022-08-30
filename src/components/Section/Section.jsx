@@ -6,7 +6,7 @@ import Image from "../Image/Image";
 import Video from "../Video/Video";
 
 const Section = () => {
-  const [data, setData] = useState("2022-08-29");
+  const [data, setData] = useState("");
   const [infos, setInfos] = useState({})
 
   const url = `https://api.nasa.gov/planetary/apod?api_key=cfc6pA7kyAgQdATFivgeENC3WLslXp04aHxCbCBC&date=${data}`;
