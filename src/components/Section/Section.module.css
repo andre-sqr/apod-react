@@ -12,10 +12,10 @@
   width: 240px;
   height: 30px;
   background: #ffffff 0% 0% no-repeat padding-box;
-  border: 5px solid #000000;
+  border: 5px solid #c53f3f;
   border-radius: 10px;
   text-align: center;
-  font-family: 'Trispace', sans-serif;
+  font-family: "Trispace", sans-serif;
 }
 
 .divReq {
@@ -26,7 +26,6 @@
   align-self: center;
   width: 100%;
   gap: 50px;
-  
 }
 
 .button {
@@ -34,15 +33,33 @@
   height: 40px;
   color: #ffffff;
   text-align: center;
-  background-image: linear-gradient(to bottom, #C53F3F 0%, #D2D2D2 100%);
+  background-image: linear-gradient(to bottom, #c53f3f 0%, #d2d2d2 100%);
   background-clip: padding-box;
   border-radius: 5px;
   font-size: 20px;
   border: 0;
-  font-family: 'Trispace', sans-serif;
+  font-family: "Trispace", sans-serif;
 }
 
 .button:hover {
   transform: scale(1.1);
   transition: all 0.5s;
+}
+
+.title {
+  color: #ffb200;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.copyright {
+  color: #ffb200;
+  font-size: 20px;
+}
+
+.explanation {
+  padding: 30px;
+  text-align: center;
+  color: #f2f2f2;
+  font-size: 20px;
 }

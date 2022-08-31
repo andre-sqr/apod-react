@@ -7,17 +7,17 @@ import Video from "../Video/Video";
 
 const Section = () => {
   const [data, setData] = useState("");
-  const [infos, setInfos] = useState({})
+  const [infos, setInfos] = useState({});
 
   const url = `https://api.nasa.gov/planetary/apod?api_key=cfc6pA7kyAgQdATFivgeENC3WLslXp04aHxCbCBC&date=${data}`;
 
   const handleReq = async () => {
     let response = await fetch(url);
     const json = await response.json();
-    setInfos(json)
+    setInfos(json);
   };
 
-  const handleChange = (e, data) => {
+  const handleChange = (e) => {
     setData(e.target.value);
   };
 
@@ -29,7 +29,7 @@ const Section = () => {
 
   useEffect(() => {
     handleReq();
-  }, [data]);
+  }, []);
 
   return (
     <section className={S.container}>
@@ -41,15 +41,19 @@ const Section = () => {
             handleChange(e, "data");
           }}
         />
-        <Button style={S.button} onClick={handleClick} text={"Enviar"} />
+        <Button style={S.button} onClick={handleClick} text={"Buscar"} />
       </div>
 
       <div>
-        {infos.media_type == 'image' ?
-        <Image src={infos.url}/> 
-        : 
-        <Video src={infos.url}/>}
+        {infos.media_type == "image" ? (
+          <Image src={infos.url} />
+        ) : (
+          <Video src={infos.url} />
+        )}
       </div>
+      <div className={S.title}>{infos.title}</div>
+      <div className={S.copyright}>{infos.copyright == undefined ? "" : `Image Credit & Copyright: ${infos.copyright}` }</div>
+      <div className={S.explanation}>{infos.explanation}</div>
     </section>
   );
 };
