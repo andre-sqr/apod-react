@@ -4,6 +4,7 @@ import Input from "../Input/Input";
 import S from "./Section.module.css";
 import Image from "../Image/Image";
 import Video from "../Video/Video";
+import { GoTelescope } from "react-icons/go";
 
 const Section = () => {
   const [data, setData] = useState("");
@@ -24,7 +25,6 @@ const Section = () => {
   const handleClick = (e) => {
     e.preventDefault();
     handleReq();
-    console.log(data);
   };
 
   useEffect(() => {
@@ -41,7 +41,12 @@ const Section = () => {
             handleChange(e, "data");
           }}
         />
-        <Button style={S.button} onClick={handleClick} text={"Buscar"} />
+        <Button
+          style={S.button}
+          onClick={handleClick}
+          text={"Buscar "}
+          icon={<GoTelescope />}
+        />
       </div>
 
       <div>
@@ -52,7 +57,11 @@ const Section = () => {
         )}
       </div>
       <div className={S.title}>{infos.title}</div>
-      <div className={S.copyright}>{infos.copyright == undefined ? "" : `Image Credit & Copyright: ${infos.copyright}` }</div>
+      <div className={S.copyright}>
+        {infos.copyright == undefined
+          ? ""
+          : `Image Credit & Copyright: ${infos.copyright}`}
+      </div>
       <div className={S.explanation}>{infos.explanation}</div>
     </section>
   );
